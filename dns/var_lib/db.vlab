@@ -8,7 +8,7 @@ vlab.com             IN SOA  ns.vlab.com. root.vlab.com. (
                                 604800     ; Negative Cache TTL (1 week)
                                 )
                         NS      ns.vlab.com.
-                        A       192.168.1.86
+                        A       192.168.1.2
 $ORIGIN vlab.com.
 $TTL 604800     ; 1 week
 ns                      A       192.168.1.2

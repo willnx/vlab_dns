@@ -1,5 +1,7 @@
 install:
-  sudo apt-get install -y bind9utils
+  - sudo apt-get install -y bind9utils
+  - sudo mkdir -p /etc/bind
+  - sudo mkdir -p /var/lib/bind
 
 script:
   make test

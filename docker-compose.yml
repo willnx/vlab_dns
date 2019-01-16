@@ -6,4 +6,3 @@ services:
       - "8053:53/udp"
     image:
       willnx/vlab-dns
-    command: ["/usr/sbin/named", "-f", "-g"]

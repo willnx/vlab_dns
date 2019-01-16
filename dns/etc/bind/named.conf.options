@@ -2,8 +2,7 @@
 options {
 
   forwarders {
-    10.7.190.6;
-    10.7.190.7;
+    8.8.8.8;
   };
 
   auth-nxdomain yes;
