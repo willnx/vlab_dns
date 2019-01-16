@@ -1,0 +1,26 @@
+# This file contains the DNS zone configurations for vLab
+
+include "/etc/bind/ddns.key";
+
+zone "vlab.com" {
+  type master;
+  notify no;
+  file "/var/lib/bind/db.vlab";
+  allow-update { key DDNS_UPDATE; };
+};
+
+
+# The name of reverse lookup zones matter!
+# If the vLab subnet doesn't start with '192.168.1', then you'll need
+# to modify the name of this zone to match the start of your subnet.
+#
+# Further more, if your vLab subnet doesn't land on a /8, /16, or /24
+# boundary, you'll have to generate multiple in-addr.arpa zones
+# https://serverfault.com/questions/837680/how-to-make-a-22-reverse-zone-in-bind-255-255-252-0
+
+zone "1.168.192.in-addr.arpa" {
+  type master;
+  notify no;
+  file "/var/lib/bind/db.vlab.in-addr.arpa";
+  allow-update { key DDNS_UPDATE; };
+};

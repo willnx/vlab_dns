@@ -1,0 +1,11 @@
+# Reverse lookup (IP to name)
+$TTL 1h;
+@    IN    SOA    ns.vlab.com. root.vlab.com. (
+                             1  ; Serial
+                        604800  ; Refresh (1 week)
+                         86400  ; Retry   (1 day)
+                       2419200  ; Expire  (4 weeks)
+                        604800) ; Negative Cache TTL (1 week)
+;
+@    IN    NS    ns.
+2   IN    PTR   ns.vlab.com.

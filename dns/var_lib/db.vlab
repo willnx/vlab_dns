@@ -1,0 +1,14 @@
+$ORIGIN .
+$TTL 1h
+vlab.com             IN SOA  ns.vlab.com. root.vlab.com. (
+                                4          ; Serial
+                                604800     ; Refresh (1 week)
+                                86400      ; Retry   (1 day)
+                                2419200    ; Expire  (4 weeks)
+                                604800     ; Negative Cache TTL (1 week)
+                                )
+                        NS      ns.vlab.com.
+                        A       192.168.1.86
+$ORIGIN vlab.com.
+$TTL 604800     ; 1 week
+ns                      A       192.168.1.2

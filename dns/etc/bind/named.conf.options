@@ -1,0 +1,24 @@
+# This config defines general settings for BIND9
+options {
+
+  forwarders {
+    10.7.190.6;
+    10.7.190.7;
+  };
+
+  auth-nxdomain yes;
+  listen-on-v6 { any; };
+  allow-query { any; };
+};
+
+logging {
+  channel default_log {
+    file "/var/log/querylog.log";
+    print-time yes;
+    print-category yes;
+    print-severity yes;
+    severity info;
+  };
+  category queries { default_log; };
+
+};

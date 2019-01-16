@@ -1,0 +1,5 @@
+install:
+  apt-get install -y bind9utils
+
+script:
+  make test
