@@ -10,7 +10,7 @@ clean:
 	-unset TESTENV
 
 install: clean
-	sudo cp dns/etc/bind/named* /etc/bind/
+	sudo cp dns/etc/bind/* /etc/bind/
 	sudo cp dns/var_lib/db* /var/lib/bind/
 
 test: install
