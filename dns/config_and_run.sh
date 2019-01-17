@@ -20,7 +20,8 @@ update_forwarders() {
 update_ddns_key() {
   # Use a user-supplied DDNS key
   if [ ! -z ${VLAB_DDNS_KEY+x} ]; then
-    sed -i -e "s/cmqR1rOrru0sK81Y3u5N784REV2yMdi8tQYjxWL4q35ny8ST7ifvwuPbVmyxPqcjj1VDhJ52ZTJQboOR5IhY/A==/${VLAB_DDNS_KEY}/g" /etc/bind/ddns.key  else
+    local key=$(echo ${VLAB_DDNS_KEY} | sed 's/\//\\\//g')
+    sed -i -e "s/cmqR1rOrru0sK81Y3u5N784REV2yMdi8tQYjxWL4q35ny8ST7ifvwuPbVmyxPqcjj1VDhJ52ZTJQboOR5IhY\/A==/${key}/g" /etc/bind/ddns.key
   else
     echo "**SECURITY WARNING** Using default DDNS key"
   fi
