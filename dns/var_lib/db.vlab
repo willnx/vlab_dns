@@ -1,5 +1,5 @@
 $ORIGIN .
-$TTL 1h
+$TTL 5m
 vlab.com             IN SOA  ns.vlab.com. root.vlab.com. (
                                 4          ; Serial
                                 604800     ; Refresh (1 week)
