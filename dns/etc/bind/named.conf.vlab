@@ -5,6 +5,7 @@ include "/etc/bind/ddns.key";
 zone "vlab.com" {
   type master;
   notify no;
+  check-names ignore;
   file "/var/lib/bind/db.vlab";
   allow-update { key DDNS_UPDATE; };
 };
@@ -21,6 +22,7 @@ zone "vlab.com" {
 zone "1.168.192.in-addr.arpa" {
   type master;
   notify no;
+  check-names ignore;
   file "/var/lib/bind/db.vlab.in-addr.arpa";
   allow-update { key DDNS_UPDATE; };
 };
