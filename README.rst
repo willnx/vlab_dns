@@ -25,3 +25,17 @@ environment variables and update the default configs accordingly:
 - ``VLAB_DNS_REV_ZONE`` - The /24 reverse zone name, ex "1.168.192.in-addr.arpa" for the 192.168.1.0/24 subnet
 - ``VLAB_IP`` - The IPv4 Address of the vLab server
 - ``VLAB_FQDN`` - The fully qualified domain name for the vLab server, ex vlab.mycompany.com
+
+
+*********************
+Creating the DDNS_KEY
+*********************
+
+You'll need to have the ``bind9utils`` (``bind9-utils`` for RPM) installed.
+
+Once it's installed, run the following command to generate the key::
+
+  $ sudo dnssec-keygen -a HMAC-SHA512 -b 512 -n USER <your vLab FQDN>
+
+Remember to replace ``<your vLab FQDN>`` with the full qualified domain name
+of your vLab server.
